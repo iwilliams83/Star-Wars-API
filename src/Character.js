@@ -2,7 +2,15 @@ import React, { Component } from "react";
 
 class Character extends Component {
   render() {
-    return <div>I'm a character!</div>;
+    const { character, getCharacterInfo } = this.props;
+
+    return (
+      <div>
+        <h3 onClick={() => getCharacterInfo(character.url)}>
+          {character.name}
+        </h3>
+      </div>
+    );
   }
 }
 
