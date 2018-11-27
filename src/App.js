@@ -7,17 +7,21 @@ import "./styles.css";
 
 class App extends Component {
   state = {
+    selectedCharacter: "",
     filmData: [],
-    loaded: false
+    loaded: false,
+    error: false
   };
 
-  getCharacterInfo = url => {
-    this.setState({ loaded: false });
+  getCharacterInfo = (url, name) => {
+    this.setState({ loaded: false, selectedCharacter: name });
     fetch(url)
       .then(response => {
         if (response.ok) {
+          this.setState({ error: false });
           return response.json();
         }
+        this.setState({ error: true });
         throw new Error("Data not found.");
       })
       .then(response => {
@@ -53,19 +57,29 @@ class App extends Component {
   };
 
   render() {
-    const { filmData, loaded } = this.state;
+    const { filmData, loaded, error, selectedCharacter } = this.state;
     return (
       <div className="App">
-        {characters.map(character => {
-          return (
-            <Character
-              character={character}
-              getCharacterInfo={this.getCharacterInfo}
-            />
-          );
-        })}
-
-        <div>{loaded ? <Films filmData={filmData} /> : null}</div>
+        <div>
+          {characters.map(character => {
+            return (
+              <Character
+                character={character}
+                getCharacterInfo={this.getCharacterInfo}
+              />
+            );
+          })}
+        </div>
+        <div>
+          {loaded && !error ? (
+            <div>
+              Film Data for {selectedCharacter}: <br />
+              <Films filmData={filmData} />
+            </div>
+          ) : (
+            error && <div>No data found for {selectedCharacter}</div>
+          )}
+        </div>
       </div>
     );
   }
