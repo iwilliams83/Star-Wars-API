@@ -1,15 +1,18 @@
 import React, { Component } from "react";
 import { characters } from "../assets/characters.json";
 import Character from "./Character";
+import Films from "./Films";
 
 import "./styles.css";
 
 class App extends Component {
   state = {
     filmData: [],
-    loading: false
+    loaded: false
   };
+
   getCharacterInfo = url => {
+    this.setState({ loaded: false });
     fetch(url)
       .then(response => {
         if (response.ok) {
@@ -31,16 +34,26 @@ class App extends Component {
     apiCalls = urls.map(url => fetch(url).then(res => res.json()));
 
     Promise.all(apiCalls).then(response => {
-      data = response.map(res => ({
-        title: res.title,
-        date: res.release_date
-      }));
-      this.setState({ filmData: data });
+      let options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      };
+
+      data = response.map(res => {
+        let date = new Date(res.release_date);
+        return {
+          title: res.title,
+          date: date.toLocaleDateString("en-US", options)
+        };
+      });
+      this.setState({ filmData: data, loaded: true });
     });
   };
 
   render() {
-    console.log(this.state);
+    const { filmData, loaded } = this.state;
     return (
       <div className="App">
         {characters.map(character => {
@@ -51,6 +64,8 @@ class App extends Component {
             />
           );
         })}
+
+        <div>{loaded ? <Films filmData={filmData} /> : null}</div>
       </div>
     );
   }

@@ -2,7 +2,19 @@ import React, { Component } from "react";
 
 class Films extends Component {
   render() {
-    return <div />;
+    const { filmData } = this.props;
+    return (
+      <div>
+        {filmData.map(data => {
+          return (
+            <div>
+              <h3>{data.title}</h3>
+              <p>{data.date}</p>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 }
 
