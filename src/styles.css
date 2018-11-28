@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-image: url("./images/starry-sky.jpg")
 }
 
 .App {
@@ -7,13 +7,14 @@ body {
   text-align: center;
 }
 
-.character-img {
+.img-fluid {
   width: 200px;
 }
 
 .character-container {
   display: flex;
   justify-content: space-evenly;
+  margin: 1rem;
 }
 
 .character-card {
@@ -28,6 +29,7 @@ body {
 }
 
 .character-name {
+  margin-top: .5em;
   color: #d7850b;
 }
 
@@ -37,8 +39,29 @@ body {
 
 .film-list {
   color: #d7850b;
+  margin: 0 1em;
+}
+
+hr {
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgb(69, 64, 55);
 }
 
 .prompt {
+  margin: .5em 1em;
   color: #d7850b;
+}
+
+.list-header {
+  background-color: #ffe4c447;
+  margin-bottom: 0.6em;
+  margin-top: 1em;
+}
+
+@media screen and (max-width: 464px) {
+  .character-container {
+    flex-wrap: wrap;
+  }
 }

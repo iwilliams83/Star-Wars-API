@@ -10,12 +10,13 @@ class Character extends Component {
       <div className="character-card"
         onClick={() => getCharacterInfo(character.url, character.name)}>
         <img src={require(`./images/${slug}.jpg`)}
-          alt="starwars character"
+          alt="Responsive image"
           className="character-img"
+          className="img-fluid"
           />
-        <h3 className="character-name">
+        <h4 className="character-name">
           {character.name}
-        </h3>
+        </h4>
       </div>
     );
   }

@@ -5,12 +5,13 @@ class Films extends Component {
     const { filmData, character } = this.props;
     return (
       <div className="film-list">
-        <h2>Film Data for {character}</h2>
+        <h2 className="list-header">Films that {character} appears in:</h2>
         {filmData.map(data => {
           return (
             <div key={data.title}>
-              <h3>{data.title}</h3>
-              <p>{data.date}</p>
+              <h4>Film Title:&nbsp; {data.title}</h4>
+              <p>Release Date:&nbsp; {data.date}</p>
+            <hr />
             </div>
           );
         })}
