@@ -73,11 +73,10 @@ class App extends Component {
         <div>
           {loaded && !error ? (
             <div>
-              Film Data for {selectedCharacter}: <br />
-              <Films filmData={filmData} />
+              <Films filmData={filmData} character={selectedCharacter}/>
             </div>
           ) : (
-            error && <div>No data found for {selectedCharacter}</div>
+            error && <div className="error-msg"><br/>No data found for {selectedCharacter}</div>
           )}
         </div>
       </div>

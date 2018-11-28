@@ -2,9 +2,10 @@ import React, { Component } from "react";
 
 class Films extends Component {
   render() {
-    const { filmData } = this.props;
+    const { filmData, character } = this.props;
     return (
-      <div>
+      <div className="film-list">
+        <h2>Film Data for {character}</h2>
         {filmData.map(data => {
           return (
             <div key={data.title}>
