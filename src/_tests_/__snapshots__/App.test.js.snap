@@ -17,60 +17,60 @@ exports[`initial render <App /> matches snapshot 1`] = `
       onClick={[Function]}
     >
       <img
-        alt="starwars character"
-        className="character-img"
+        alt="Responsive image"
+        className="img-fluid"
         src="luke-skywalker.jpg"
       />
-      <h3
+      <h4
         className="character-name"
       >
         Luke Skywalker
-      </h3>
+      </h4>
     </div>
     <div
       className="character-card"
       onClick={[Function]}
     >
       <img
-        alt="starwars character"
-        className="character-img"
+        alt="Responsive image"
+        className="img-fluid"
         src="darth-vader.jpg"
       />
-      <h3
+      <h4
         className="character-name"
       >
         Darth Vader
-      </h3>
+      </h4>
     </div>
     <div
       className="character-card"
       onClick={[Function]}
     >
       <img
-        alt="starwars character"
-        className="character-img"
+        alt="Responsive image"
+        className="img-fluid"
         src="obi-wan-kenobi.jpg"
       />
-      <h3
+      <h4
         className="character-name"
       >
         Obi-wan Kenobi
-      </h3>
+      </h4>
     </div>
     <div
       className="character-card"
       onClick={[Function]}
     >
       <img
-        alt="starwars character"
-        className="character-img"
+        alt="Responsive image"
+        className="img-fluid"
         src="r2-d2.jpg"
       />
-      <h3
+      <h4
         className="character-name"
       >
         R2-D2
-      </h3>
+      </h4>
     </div>
   </div>
   <div />

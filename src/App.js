@@ -66,13 +66,13 @@ class App extends Component {
           })}
         </div>
         <div>
-          {loaded && !error ? (
+          {loaded && !error ?
             <div>
               <Films id="films" filmData={filmData} character={selectedCharacter}/>
             </div>
-          ) : (
+           :
             error && <div className="error-msg"><br/>No data found for {selectedCharacter}</div>
-          )}
+          }
         </div>
       </div>
     );

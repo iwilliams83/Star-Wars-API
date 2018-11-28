@@ -84,7 +84,6 @@ describe("gets character's films", () => {
         .at(2)
         .prop('getCharacterInfo')(characterUrl, characterName)
 
-    // Wait for state to update
     await wrapper.update();
 
     expect(api.characterAPIcall).toBeCalledWith(characterUrl)
