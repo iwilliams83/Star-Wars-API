@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { characters } from "../assets/characters.json";
+import { characters } from "./characters.json";
 import Character from "./Character";
 import Films from "./Films";
 
@@ -60,10 +60,10 @@ class App extends Component {
     const { filmData, loaded, error, selectedCharacter } = this.state;
     return (
       <div className="App">
-        <div>
+        <div className="character-container">
           {characters.map(character => {
             return (
-              <Character
+              <Character key={character.name}
                 character={character}
                 getCharacterInfo={this.getCharacterInfo}
               />

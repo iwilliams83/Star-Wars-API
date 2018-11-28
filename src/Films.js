@@ -7,7 +7,7 @@ class Films extends Component {
       <div>
         {filmData.map(data => {
           return (
-            <div>
+            <div key={data.title}>
               <h3>{data.title}</h3>
               <p>{data.date}</p>
             </div>

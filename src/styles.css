@@ -2,3 +2,27 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.character-img {
+  width: 200px;
+}
+
+.character-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.character-card {
+  padding: .5em;
+  border: solid;
+  border-radius: 5px;
+}
+
+.character-card:hover{
+  background-color: #80808085;
+  cursor: pointer;
+}
+
+.character-name {
+  color: #d7850b;
+}
