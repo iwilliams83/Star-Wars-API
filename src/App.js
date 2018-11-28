@@ -30,7 +30,7 @@ class App extends Component {
   getFilmData = urls => {
     let data = [];
     let apiCalls = [];
-    
+
     filmDataAPIcall(urls).then(response => {
       let options = {
         weekday: "long",
@@ -54,6 +54,7 @@ class App extends Component {
     const { filmData, loaded, error, selectedCharacter } = this.state;
     return (
       <div className="App">
+        <h2 className="prompt">Click on a character to see their film info</h2>
         <div className="character-container">
           {characters.map(character => {
             return (
@@ -67,7 +68,7 @@ class App extends Component {
         <div>
           {loaded && !error ? (
             <div>
-              <Films filmData={filmData} character={selectedCharacter}/>
+              <Films id="films" filmData={filmData} character={selectedCharacter}/>
             </div>
           ) : (
             error && <div className="error-msg"><br/>No data found for {selectedCharacter}</div>

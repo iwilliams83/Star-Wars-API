@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`initial render <App /> matches snapshot 1`] = `
+<div
+  className="App"
+>
+  <h2
+    className="prompt"
+  >
+    Click on a character to see their film info
+  </h2>
+  <div
+    className="character-container"
+  >
+    <div
+      className="character-card"
+      onClick={[Function]}
+    >
+      <img
+        alt="starwars character"
+        className="character-img"
+        src="luke-skywalker.jpg"
+      />
+      <h3
+        className="character-name"
+      >
+        Luke Skywalker
+      </h3>
+    </div>
+    <div
+      className="character-card"
+      onClick={[Function]}
+    >
+      <img
+        alt="starwars character"
+        className="character-img"
+        src="darth-vader.jpg"
+      />
+      <h3
+        className="character-name"
+      >
+        Darth Vader
+      </h3>
+    </div>
+    <div
+      className="character-card"
+      onClick={[Function]}
+    >
+      <img
+        alt="starwars character"
+        className="character-img"
+        src="obi-wan-kenobi.jpg"
+      />
+      <h3
+        className="character-name"
+      >
+        Obi-wan Kenobi
+      </h3>
+    </div>
+    <div
+      className="character-card"
+      onClick={[Function]}
+    >
+      <img
+        alt="starwars character"
+        className="character-img"
+        src="r2-d2.jpg"
+      />
+      <h3
+        className="character-name"
+      >
+        R2-D2
+      </h3>
+    </div>
+  </div>
+  <div />
+</div>
+`;
