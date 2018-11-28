@@ -15,5 +15,8 @@ Allows users to click on a character to see a list of the films that character h
 - Go to the browser & click on a character!
 - If necessary, run tests with `npm test`
 
+## Link to deployed app
+http://star-wars-api-challenge.com.s3-website-us-east-1.amazonaws.com
+
 ## Demo
 ![project demo](public/star-wars-demo.gif)
