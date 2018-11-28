@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { characters } from "./characters.json";
+import { characters } from "./characters";
 import Character from "./Character";
 import Films from "./Films";
+import { characterAPIcall, filmDataAPIcall } from "./api"
 
 import "./styles.css";
 
@@ -15,19 +16,13 @@ class App extends Component {
 
   getCharacterInfo = (url, name) => {
     this.setState({ loaded: false, selectedCharacter: name });
-    fetch(url)
+    characterAPIcall(url)
       .then(response => {
-        if (response.ok) {
-          this.setState({ error: false });
-          return response.json();
-        }
-        this.setState({ error: true });
-        throw new Error("Data not found.");
-      })
-      .then(response => {
+        this.setState({ error: false });
         this.getFilmData(response.films);
       })
       .catch(error => {
+        this.setState({ error: true });
         console.error(error.message);
       });
   };
@@ -35,9 +30,8 @@ class App extends Component {
   getFilmData = urls => {
     let data = [];
     let apiCalls = [];
-    apiCalls = urls.map(url => fetch(url).then(res => res.json()));
-
-    Promise.all(apiCalls).then(response => {
+    
+    filmDataAPIcall(urls).then(response => {
       let options = {
         weekday: "long",
         year: "numeric",
