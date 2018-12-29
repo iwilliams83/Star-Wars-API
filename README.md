@@ -14,6 +14,7 @@ Allows users to click on a character to see a list of the films that character h
 - Run `npm start`
 - Go to the browser & click on a character!
 - If necessary, run tests with `npm test`
+- To run UI automation tests, run `npx cypress open`
 
 ## Link to deployed app
 http://star-wars-api-challenge.com.s3-website-us-east-1.amazonaws.com

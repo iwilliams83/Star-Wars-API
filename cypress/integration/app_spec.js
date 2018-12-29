@@ -13,6 +13,5 @@ describe("View character info", () => {
       .get('[data-testid=film-info]')
       .first()
       .should('not.be.empty')
-
   })
 })
