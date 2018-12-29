@@ -21,3 +21,6 @@ http://star-wars-api-challenge.com.s3-website-us-east-1.amazonaws.com
 
 ## Demo
 ![project demo](public/star-wars-demo.gif)
+
+## UI Automation test demo
+![automation test demo](public/cypress-test-demo.gif)
