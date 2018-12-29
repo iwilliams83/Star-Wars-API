@@ -7,7 +7,7 @@ class Character extends Component {
     const slug = character.name.toLowerCase().replace(/ /g,'-')
 
     return (
-      <div className="character-card"
+      <div className="character-card" data-testid="character-card"
         onClick={() => getCharacterInfo(character.url, character.name)}>
         <img src={require(`./images/${slug}.jpg`)}
           alt="Responsive image"
