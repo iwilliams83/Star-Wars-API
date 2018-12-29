@@ -1,3 +1,4 @@
+
 describe("View character info", () => {
   it("Displays a list of that character's films", () => {
     cy.visit('http://localhost:3000/')
@@ -6,6 +7,12 @@ describe("View character info", () => {
       .get('[data-testid=character-card]')
       .first()
       .click()
-      .get('.film-list')
+      .wait(500)
+      .get('[data-testid=list-header]')
+      .should('contain', "Luke Skywalker")
+      .get('[data-testid=film-info]')
+      .first()
+      .should('not.be.empty')
+
   })
 })
